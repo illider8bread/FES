@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    margin-left: 0px;
+    padding: 0;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    color: #243e63;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: left;
+}
+
+p {
+    margin: 32px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#landing {
+    width: 100%;
+    padding: 32px 32px 0;
+}
+
+/* 
+NAVIGATION BAR
+ */
+
+.nav__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav__logo--img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav__logo--title {
+    font-weight: 900;
+    font-size: 24px;
+    margin-left: 12px;
+    padding-bottom: 2px;
+    letter-spacing: 0.6px;
+    cursor: default;
+}
+
+.nav__links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-end;
+
+}
+
+.nav__link {
+    text-decoration: none;
+    padding: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav__link--primary {
+    background-color: #6415ff;
+    color: white;
+    border-radius: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+}
+
+/* 
+HEADER
+ */
+
+.container {
+    padding: 96px 0;
+}
+
+.purple {
+    color: #6415ff;
+}
+
+.header__row {
+    display: flex;
+}
+
+.header__description {
+    width: 40%;
+
+}
+
+.header__img--wrapper {
+    width: 60%;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__img {
+    width: 100%;
+    max-width: 512px;
+}
+
+.header__email {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.header__email--input {
+    width: 100%;
+    font-size: 16px;
+    border-radius: 500px;
+    padding: 20px 192px 20px 32px;
+    border: 2px solid rgb(229, 231, 235);
+    position: absolute;
+    color: rgb(36, 62, 99);
+    font-size: 16px;
+    font-weight: 500;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: border-color 300ms;
+}
+
+.header__email--btn {
+    z-index: 2;
+    margin: 8px;
+    height: calc(100% - 16px);
+    border-radius: 500px;
+    width: 160px;
+    border: none;
+    background-color: #6415ff;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 0;
+    transition: all 300ms ease;
+
+}
+
+.header__email--btn:hover {
+    background-color: rgba(60, 13, 153);
+}
+
+.header__customers--title {
+    margin-top: 48px;
+    font-size: 12px;
+    color: #a0aec0;
+    font-weight: 700;
+}
+
+.header__customers--img {
+    width: 100%;
+    opacity: 0.5;
+}
+
+
+
+/* w40% w60% df f-d:column padding: 80px 0 w 50% */
