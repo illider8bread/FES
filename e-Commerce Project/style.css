@@ -163,13 +163,14 @@ button:active {
 
 .highlight__wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .highlight {
     padding: 16px 24px;
     width: calc(100% / 3);
     display: flex;
-    justify-content: center;
+    text-align: center;
     flex-direction: column;
     align-items: center;
 }
@@ -336,7 +337,31 @@ footer {
     margin: 24px;
 }
 
-@media (max-width: 800px) {
+
+
+@media (max-width: 768px){
+    .header__description{
+        padding: 0 8px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 26px;
+    }
+    button{
+        font-size: 18px;
+    }
+    .book{
+        width: 50%;
+    }
+}
+
+
+
+
+
+@media (max-width: 550x) {
     .nav__links {
         display: none;
     }
