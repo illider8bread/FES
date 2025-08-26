@@ -333,3 +333,8 @@ STEPS
     font-weight: 500;
     line-height: 2;
 }
+
+.step{
+    display: flex;
+    
+}
