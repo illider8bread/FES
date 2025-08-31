@@ -31,6 +31,12 @@ p {
     line-height: 1.5;
 }
 
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .nav__row {
     width: 100%;
     max-width: 1200px;
