@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,15 +8,29 @@
     font-family: "Roboto", sans-serif;
 }
 
-li{
+li {
     list-style-type: none;
+}
+
+section {
+    background-color: rgb(245, 245, 245);
+}
+
+p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 /* 
 NAVIGATION
 */
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +38,7 @@ nav{
     max-width: 1200px;
     margin: 0 auto;
     height: 100px;
-
+    padding: 0 20px;
 }
 
 #personal-logo {
@@ -32,15 +47,15 @@ nav{
     filter: invert(1)
 }
 
-.nav__link--list{
+.nav__link--list {
     display: flex;
 }
 
-.nav__link{
+.nav__link {
     margin: 0 12px;
 }
 
-.nav__link--anchor{
+.nav__link--anchor {
     text-decoration: none;
     font-size: 16px;
     color: #242424;
@@ -48,6 +63,84 @@ nav{
 
 }
 
-.fa-circle-half-stroke{
+.fa-circle-half-stroke {
     font-size: 20px;
+}
+
+/* 
+LANDING PAGE
+*/
+
+#landing-page {
+    height: 100vh;
+}
+
+header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+
+header .title {
+    font-size: 120px;
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1;
+}
+
+.orange {
+    color: #f06449 !important;
+}
+
+.header__para{
+    font-size: 24px;
+    line-height: 2;
+    max-width: 450px;
+}
+
+.header__links{
+    margin-top: 16px;
+    display: flex;
+}
+
+.header__link{
+    background-color: #f06449;
+    color: white;
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    margin-right: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.click{
+    transition: all 300ms ease;
+}
+
+.click:hover{
+    transform: scale(1.1);
+}
+
+.click:active{
+    transform: scale(0.8);
+}
+
+.mail__btn{
+    height: 70px;
+    width: 70px;
+    font-size: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #242424;
+    color: white;
 }
