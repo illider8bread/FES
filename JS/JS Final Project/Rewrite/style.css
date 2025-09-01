@@ -75,7 +75,11 @@ nav {
     font-size: 1.5rem;
 }
 
-#search__content {
+/* 
+Search Bar
+*/
+
+#refresh__content {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -84,7 +88,7 @@ nav {
     color: var(--theme-lightgreen);
 }
 
-.search__title {
+.refresh__title {
     font-size: 3rem;
     text-transform: uppercase;
     padding-bottom: 1.5rem;
@@ -99,7 +103,6 @@ nav {
     margin-bottom: 2rem;
 }
 
-.search__input,
 .search__submit {
     height: 100%;
     border: none;
@@ -107,17 +110,6 @@ nav {
     margin: .5rem;
     color: var(--theme-orange);
     text-transform: uppercase;
-
-}
-
-.search__input {
-    width: 80%;
-    padding-left: 1rem;
-    background-color: var(--theme-whiteish);
-    font-weight: 400;
-}
-
-.search__submit {
     height: 50px;
     width: 20%;
     min-width: 50px;
@@ -125,15 +117,40 @@ nav {
 
 }
 
-.fa-magnifying-glass {
+.fa-arrows-rotate {
     font-size: 2rem;
 }
 
+/* 
+FILTERS
+*/
+
 .filter__wrapper{
-    display: flex;
-    justify-content: space-between;
     padding-bottom: 1rem;
 }
+
+.filter__para{
+    text-align: center;
+    padding-right: 1rem;
+}
+
+.search__filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter__list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 
+KITTIES
+*/
 
 .kitties{
     display: flex;

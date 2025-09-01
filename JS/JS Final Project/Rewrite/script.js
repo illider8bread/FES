@@ -5,26 +5,40 @@ function notActive() {
 }
 
 const kittiesEl = document.querySelector(".kitties");
+const breedFilterEl = document.querySelector(".breed__filter");
 
 async function renderCats(searchterm) {
-    const cats = await fetch(`https://api.thecatapi.com/v1/images/search?api_key=live_eMv9HahQB2nEhfURSsyvpJJXfiLtVlgBazYtMuWuONPkBWk5ebCeS3lRkd0MnuFe&limit=20&has_breed=1&breed_ids=beng`);
+    const cats = await fetch(`https://api.thecatapi.com/v1/images/search?api_key=live_eMv9HahQB2nEhfURSsyvpJJXfiLtVlgBazYtMuWuONPkBWk5ebCeS3lRkd0MnuFe&limit=20&has_breeds=true&size=small&breed_ids=${searchterm}`);
     const catsData = await cats.json();
     console.log(catsData);
     
     kittiesEl.innerHTML = catsData.map(
         (cat) => `
         <div class="kitty">
-            <img src=${cat.url}" alt="Picture of ">
-                <div class="kitty__text">
-                    <h4 class="kitty__name">
-                    <b>Name:</b> 
-                    </h4>
-                    <p class="kitty__breed">
-                    <b>Breed:</b> 
-                    </p>
-                </div>
+            <img src="${cat.url}" alt="Picture of ${cat.id}">
+            <div class="kitty__text">
+                <p class="kitty__breed">
+                <b>Breed:</b> ${cat['breeds']['0']['name']}
+                </p>
+                <p class="kitty__breed">
+                <b>Temperament:</b> ${cat['breeds']['0']['temperament']}
+                </p>
+            </div>
         </div>`
     ).join("");
 }
 
 renderCats();
+
+async function breedsList() {
+    const breed = await fetch("https://api.thecatapi.com/v1/breeds");
+    const breedData = await breed.json();
+
+    breedFilterEl.innerHTML = `<option value="" selected disabled>Breed:</option>
+    ` + breedData.map(
+        (breed) =>
+            `<option value="${breed.id}">${breed.name}</option>`
+        ).join("");
+}
+
+breedsList();

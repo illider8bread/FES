@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -15,7 +17,7 @@
                 <nav>
                     <div class="nav__logo">
                         <i class="fa-solid fa-cat"></i>
-                        <h2 class="nav__title">Kitty Search</h2>
+                        <h2 class="nav__title">Kitty View</h2>
                     </div>
                     <div class="nav__links">
                         <div class="nav__link"><a href="#search__content">Home</a></div>
@@ -23,11 +25,10 @@
                         <div class="nav__link"><a href="#">Browse Kitties!</a></div>
                     </div>
                 </nav>
-                <div id="search__content">
-                    <h1 class="search__title">Search for a Kitty</h1>
+                <div id="refresh__content">
+                    <h1 class="refresh__title">Generate All New Kitties</h1>
                     <div class="search__bar">
-                        <input type="text" class="search__input" placeholder="search by breed">
-                        <button class="search__submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button class="search__submit"><i class="fa-solid fa-arrows-rotate"></i></button>
                     </div>
                 </div>
             </div>
@@ -37,23 +38,39 @@
         <div class="container">
             <div class="row">
                 <div class="filter__wrapper">
-                    <p class="filter__para">
+                    <div class="search__filter">
+                        <p class="filter__para">
+                            Show Me Specific Kitties:
+                        </p>
+                        <select class="filter breed__filter" onchange="searchBreed(value)">
+                            <option value="" selected disabled>Breed:</option>
+                            
+                        </select>
+                    </div>
+                    <div class="filter__list">
+                        <p class="filter__para">
+                            Filter My Shown Kitties:
+                        </p>
+                        <select class="filter">
+                            <option value="">Affection</option>
 
-                    </p>
-                    <select name="filter__select" id="filter__select">
-                        <option value="Sort" selected disabled>Sort by:</option>
-                        <option value="dog_high_to_low">Dog Friendliness: High to Low</option>
-                        <option value="int_high_to_low">Intelligence: High to Low</option>
-                        <option value="rare">Rare</option>
-                        <option value="common">Common</option>
-                    </select>
-                </div>
+                        </select>
+                        <select class="filter">
+                            <option value=""></option>
 
-                <div class="kitties">
-                    
+                        </select>
+                        <select class="filter">
+                            <option value=""></option>
+
+                        </select>
+                    </div>
+
+                    <div class="kitties">
+
+                    </div>
                 </div>
             </div>
-        </div>
     </main>
 </body>
+
 </html>
