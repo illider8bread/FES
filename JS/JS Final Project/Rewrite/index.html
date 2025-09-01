@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitty Search</title>
+    <script src="https://kit.fontawesome.com/5f2b433b1e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <nav>
+                    <div class="nav__logo">
+                        <i class="fa-solid fa-cat"></i>
+                        <h2 class="nav__title">Kitty Search</h2>
+                    </div>
+                    <div class="nav__links">
+                        <div class="nav__link"><a href="#search__content">Home</a></div>
+                        <div class="nav__link"><a href="#" onclick="notActive()">Support</a></div>
+                        <div class="nav__link"><a href="#">Browse Kitties!</a></div>
+                    </div>
+                </nav>
+                <div id="search__content">
+                    <h1 class="search__title">Search for a Kitty</h1>
+                    <div class="search__bar">
+                        <input type="text" class="search__input" placeholder="search by breed">
+                        <button class="search__submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="filter__wrapper">
+                    <p class="filter__para">
+
+                    </p>
+                    <select name="filter__select" id="filter__select">
+                        <option value="Sort" selected disabled>Sort by:</option>
+                        <option value="dog_high_to_low">Dog Friendliness: High to Low</option>
+                        <option value="int_high_to_low">Intelligence: High to Low</option>
+                        <option value="rare">Rare</option>
+                        <option value="common">Common</option>
+                    </select>
+                </div>
+
+                <div class="kitties">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
