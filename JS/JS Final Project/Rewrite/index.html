@@ -28,7 +28,7 @@
                 <div id="refresh__content">
                     <h1 class="refresh__title">Generate All New Kitties</h1>
                     <div class="search__bar">
-                        <button class="search__submit"><i class="fa-solid fa-arrows-rotate"></i></button>
+                        <button class="search__submit" onclick="renderCatsInitial()"><i class="fa-solid fa-arrows-rotate"></i></button>
                     </div>
                 </div>
             </div>
@@ -42,35 +42,15 @@
                         <p class="filter__para">
                             Show Me Specific Kitties:
                         </p>
-                        <select class="filter breed__filter" onchange="searchBreed(value)">
-                            <option value="" selected disabled>Breed:</option>
-                            
+                        <select class="filter breed__filter" onchange="renderCatsSearch(event)">
+                    
                         </select>
-                    </div>
-                    <div class="filter__list">
-                        <p class="filter__para">
-                            Filter My Shown Kitties:
-                        </p>
-                        <select class="filter">
-                            <option value="">Affection</option>
-
-                        </select>
-                        <select class="filter">
-                            <option value=""></option>
-
-                        </select>
-                        <select class="filter">
-                            <option value=""></option>
-
-                        </select>
-                    </div>
-
-                    <div class="kitties">
-
                     </div>
                 </div>
+                <div class="kitties">
+                </div>
             </div>
-            </div>
+        </div>
     </main>
 </body>
 

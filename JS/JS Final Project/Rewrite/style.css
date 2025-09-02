@@ -55,6 +55,7 @@ nav {
 .nav__logo .fa-cat,
 .nav__title {
     font-size: 2rem;
+    cursor: default;
 }
 
 .fa-cat {
@@ -93,6 +94,7 @@ Search Bar
     text-transform: uppercase;
     padding-bottom: 1.5rem;
     text-align: center;
+    cursor: default;
 }
 
 .search__bar {
@@ -114,6 +116,7 @@ Search Bar
     width: 20%;
     min-width: 50px;
     background-color: var(--theme-darkgrey);
+    cursor: pointer;
 
 }
 
@@ -122,43 +125,57 @@ Search Bar
 }
 
 /* 
+MAIN
+*/
+
+main{
+    background-color: var(--theme-darkgrey);
+}
+
+/* 
 FILTERS
 */
 
-.filter__wrapper{
+.filter__wrapper {
     padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.filter__para{
+.filter__para {
     text-align: center;
     padding-right: 1rem;
 }
 
-.search__filter{
+.search__filter {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--theme-cream);
+    font-size: 1.5rem;
 }
 
-.filter__list{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.filter{
+    border: none;
+    padding: .5rem;
+    background-color: var(--theme-cream);
+    color: var(--theme-darkbrown);
+    cursor: pointer;
 }
 
 /* 
 KITTIES
 */
 
-.kitties{
+.kitties {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.kitty{
+.kitty {
     border: 1px solid var(--theme-darkgrey);
     border-radius: 0.25rem;
     overflow: hidden;
@@ -167,22 +184,21 @@ KITTIES
     margin: .5rem;
 }
 
-.kitty
-img{
+.kitty img {
     width: 100%;
 }
 
-.kitty__text{
-    padding: 1rem;
+.kitty__text {
+    padding: 1.5rem 1rem;
     color: var(--theme-darkbrown);
 }
 
-.kitty__name{
+.kitty__name {
     font-size: 1.25rem;
     font-weight: 500;
 }
 
-b{
+b {
     font-size: inherit;
     font-weight: 900;
     letter-spacing: 1px;
