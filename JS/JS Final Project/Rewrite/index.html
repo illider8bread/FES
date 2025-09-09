@@ -25,10 +25,23 @@
                         <div class="nav__link"><a href="#">Browse Kitties!</a></div>
                     </div>
                 </nav>
-                <div id="refresh__content">
-                    <h1 class="refresh__title">Generate All New Kitties</h1>
-                    <div class="search__bar">
-                        <button class="search__submit" onclick="renderCatsInitial()"><i class="fa-solid fa-arrows-rotate"></i></button>
+                <div class="kitty__header">
+                    <div id="refresh__content">
+                        <h1 class="refresh__title">Search Kitties</h1>
+                        <div class="search__bar">
+                            <input type="text" class="search__input" placeholder="Search by breed">
+                            <button class="search__submit" onclick="renderCatsInitial()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <p class="breeds__list">Don't know enough kitty breeds? <a class="breeds__list--link" onclick="showBreeds()">Click here to see a complete list!</a></p>
+                    </div>
+                    <div id="kitty__breeds" class="kitty__breeds invisible">
+                        <button class="kitty__hide" onclick="hideBreeds()">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                        <ul class="kitty__breeds--list">
+
+                        </ul>
+                        
                     </div>
                 </div>
             </div>
@@ -40,10 +53,17 @@
                 <div class="filter__wrapper">
                     <div class="search__filter">
                         <p class="filter__para">
-                            Show Me Specific Kitties:
+                            Sort Kitties By:
                         </p>
-                        <select class="filter breed__filter" onchange="renderCatsSearch(event)">
-                    
+                        <select class="filter breed__filter" onchange="sortShownCats(event)">
+                            <option selected disabled>none</option>
+                            <option value="aff_low_to_high">Affection: Low to High </option>
+                            <option value="aff_high_to_low">Affection: High to Low</option>
+                            <option value="en_low_to_high">Energy: Low to High</option>
+                            <option value="en_high_to_low">Energy: High to Low</option>
+                            <option value="int_low_to_high">Intelligence: Low to High</option>
+                            <option value="int_high_to_low">Intelligence: High to Low</option>
+
                         </select>
                     </div>
                 </div>
