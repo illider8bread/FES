@@ -29,8 +29,8 @@
                     <div id="refresh__content">
                         <h1 class="refresh__title">Search Kitties</h1>
                         <div class="search__bar">
-                            <input type="text" class="search__input" placeholder="Search by breed">
-                            <button class="search__submit" onclick="renderCatsInitial()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" class="search__input" id="search__input" placeholder="Search by breed">
+                            <button class="search__submit" onclick="renderCatsInitial('none', document.getElementById('search__input').value )"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
                         <p class="breeds__list">Don't know enough kitty breeds? <a class="breeds__list--link" onclick="showBreeds()">Click here to see a complete list!</a></p>
                     </div>

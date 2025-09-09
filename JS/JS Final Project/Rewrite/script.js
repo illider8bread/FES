@@ -10,32 +10,50 @@ function notActive() {
 async function renderCatsInitial(sortSelection, searchTerm) {
     sortSelection = sortSelection || "none";
     searchTerm = searchTerm || " ";
-
-
+    console.log(sortSelection);
+    console.log(searchTerm)
+    if (searchTerm != " "){
+    // run the search function here
+    const searchedCatID = findID(searchTerm);
+    const searchQuery = `&breed_ids=${searchedCatID}`
+    const cats = await fetch(`https://api.thecatapi.com/v1/images/search?api_key=live_eMv9HahQB2nEhfURSsyvpJJXfiLtVlgBazYtMuWuONPkBWk5ebCeS3lRkd0MnuFe&limit=24&has_breeds=true&order=ASC${searchQuery}`);
+    const catsData = await cats.json();
+    kittiesEl.innerHTML = catsData.map((cat) => catHtml(cat)).join("");
+    return
+    } else if (searchTerm != " " && sortSelection != "none"){
+        const searchedCatID = findID(searchTerm);
+    const searchQuery = `&breed_ids=${searchedCatID}`
+    const cats = await fetch(`https://api.thecatapi.com/v1/images/search?api_key=live_eMv9HahQB2nEhfURSsyvpJJXfiLtVlgBazYtMuWuONPkBWk5ebCeS3lRkd0MnuFe&limit=24&has_breeds=true&order=ASC${searchQuery}`);
+    const catsData = await cats.json();
+    sortCats(sortSelection);
+    kittiesEl.innerHTML = catsData.map((cat) => catHtml(cat)).join("");
+    return
+    } else {
     const cats = await fetch(`https://api.thecatapi.com/v1/images/search?api_key=live_eMv9HahQB2nEhfURSsyvpJJXfiLtVlgBazYtMuWuONPkBWk5ebCeS3lRkd0MnuFe&limit=24&has_breeds=true&order=ASC`);
     const catsData = await cats.json();
-
-    if (sortSelection === 'none'){
-    } else if (sortSelection === 'aff_low_to_high'){
-        catsData.sort((a, b )=> a.affection_level - b.affection_level);
-    } else if (sortSelection === 'aff_high_to_low'){
-        catsData.sort((a, b )=> b.affection_level - a.affection_level);
-    } else if (sortSelection === 'en_low_to_high'){
-        catsData.sort((a, b )=> a.energy_level - b.energy_level);
-    } else if (sortSelection === 'en_high_to_low'){
-        catsData.sort((a, b )=> b.energy_level - a.energy_level);
-    } else if (sortSelection === 'int_low_to_high'){
-        catsData.sort((a, b )=> a.intelligence - b.intelligence);
-    } else if (sortSelection === 'int_high_to_low'){
-        catsData.sort((a, b )=> b.intelligence - a.intelligence);
-    }
-
-
     kittiesEl.innerHTML = catsData.map((cat) => catHtml(cat)).join("");
+    }
 }
 
 function sortShownCats(event) {
     renderCatsInitial(event.target.value);
+}
+
+function sortCats(sortSelection){
+if (sortSelection === 'none'){
+    } else if (sortSelection === 'aff_low_to_high'){
+        catsData.sort((a, b)=> a['breeds']['0']['affection_level'] - b['breeds']['0']['affection_level']);
+    } else if (sortSelection === 'aff_high_to_low'){
+        catsData.sort((a, b)=> b['breeds']['0']['affection_level'] - a['breeds']['0']['affection_level']);
+    } else if (sortSelection === 'en_low_to_high'){
+        catsData.sort((a, b)=> a['breeds']['0']['energy_level'] - b['breeds']['0']['energy_level']);
+    } else if (sortSelection === 'en_high_to_low'){
+        catsData.sort((a, b)=> b['breeds']['0']['energy_level'] - a['breeds']['0']['energy_level']);
+    } else if (sortSelection === 'int_low_to_high'){
+        catsData.sort((a, b)=> a['breeds']['0']['energy_level'] - b['breeds']['0']['energy_level']);
+    } else if (sortSelection === 'int_high_to_low'){
+        catsData.sort((a, b)=> b['breeds']['0']['energy_level'] - a['breeds']['0']['energy_level']);
+    }
 }
 
 function catHtml(cat) {
@@ -49,13 +67,28 @@ function catHtml(cat) {
                     <div class="kitty__stats">
                     <div class="aff kitty__stat">Affection <br> ${cat['breeds']['0']['affection_level']}</div>
                     <div class="en kitty__stat"> Energy <br> ${cat['breeds']['0']['energy_level']}</div>
-                    <div class="int kitty__stat"> Intelligence <br> ${cat['breeds']['0']['intelligence']}</div>
+                    <div class="int kitty__stat"> Intelligence <br> ${cat['breeds']['0']['energy_level']}</div>
                 </div>
             </div>
         </div>`
 }
 
+// if searchinput = map.name then return ID then 
 
+async function findID(searchTerm){
+    const breed = await fetch("https://api.thecatapi.com/v1/breeds");
+    const breedData = await breed.json();
+    const breedID = breedData.map((breed) => {
+        console.log(breed)
+        const searchBreed = `${breed['breeds']['0']['name']}`;
+        console.log(searchBreed);
+        // if (breed['breeds']['0']['name'] == searchTerm){
+        //     return breed['breeds']['0']['id'];
+        // } else{
+        //     alert("There were no results matching your search. Please try again. If you need help, reference the lists of breeds available.")
+        // }
+    })
+}
 
 
 async function renderBreeds() {
