@@ -9,7 +9,7 @@ async function renderCatsInitial(sortSelection, searchTerm) {
     const searchQuery = `&s=${searchTermPlussed}`;
 
     try {
-        const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=e44d38c3${searchQuery}`);
+        const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=e44d38c3${searchQuery}`);
         const moviesData = await response.json();
 
         // Check if the response contains the Search array
