@@ -55,4 +55,4 @@ function searchCats(){
     renderCatsInitial("none", search);
 }
 
-document.addEventListener('DOMContentLoaded', renderCatsInitial(), false);
+document.addEventListener('DOMContentLoaded',  () => renderCatsInitial(), false);
