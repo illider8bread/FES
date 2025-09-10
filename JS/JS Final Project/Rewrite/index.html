@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitty View</title>
+    <title>Movie View</title>
     <script src="https://kit.fontawesome.com/5f2b433b1e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="scriptMovies.js" defer></script>
 </head>
 
 <body>
@@ -17,35 +17,25 @@
                 <nav>
                     <div class="nav__logo">
                         <i class="fa-solid fa-cat"></i>
-                        <h2 class="nav__title">Kitty View</h2>
+                        <h2 class="nav__title">Movie View</h2>
                     </div>
                     <div class="nav__links">
                         <div class="nav__link"><a href="#search__content">Home</a></div>
                         <div class="nav__link"><a href="#" onclick="notActive()">Support</a></div>
-                        <div class="nav__link"><a href="#">Browse Kitties!</a></div>
+                        <div class="nav__link"><a href="#">Browse Movies!</a></div>
                     </div>
                 </nav>
                 <div class="kitty__header">
                     <div id="refresh__content">
-                        <h1 class="refresh__title">Search Kitties</h1>
+                        <h1 class="refresh__title">Search Movies</h1>
                         <div class="search__bar">
-                            <input type="text" class="search__input" id="search__input" placeholder="Search by breed">
-                            <button class="search__submit" onclick="renderCatsInitial('none', document.getElementById('search__input').value )"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" class="search__input" id="search__input" placeholder="Search by title">
+                            <button class="search__submit" onclick="searchCats()"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
-                        <p class="breeds__list">Don't know enough kitty breeds? <a class="breeds__list--link" onclick="showBreeds()">Click here to see a complete list!</a></p>
                     </div>
-                    <div id="kitty__breeds" class="kitty__breeds invisible">
-                        <button class="kitty__hide" onclick="hideBreeds()">
-                            <i class="fa-solid fa-x"></i>
-                        </button>
-                        <ul class="kitty__breeds--list">
-
-                        </ul>
-                        
                     </div>
                 </div>
             </div>
-        </div>
     </header>
     <main>
         <div class="container">
@@ -53,17 +43,12 @@
                 <div class="filter__wrapper">
                     <div class="search__filter">
                         <p class="filter__para">
-                            Sort Kitties By:
+                            Sort Movies By:
                         </p>
-                        <select class="filter breed__filter" onchange="sortShownCats(event)">
+                        <select class="filter breed__filter" onchange="sortCats(event)">
                             <option selected disabled>none</option>
-                            <option value="aff_low_to_high">Affection: Low to High </option>
-                            <option value="aff_high_to_low">Affection: High to Low</option>
-                            <option value="en_low_to_high">Energy: Low to High</option>
-                            <option value="en_high_to_low">Energy: High to Low</option>
-                            <option value="int_low_to_high">Intelligence: Low to High</option>
-                            <option value="int_high_to_low">Intelligence: High to Low</option>
-
+                            <option value="release_low_to_high">Release Date: Low to High </option>
+                            <option value="release_high_to_low">Release Date: High to Low</option>
                         </select>
                     </div>
                 </div>
